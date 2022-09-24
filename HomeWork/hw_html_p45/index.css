@@ -4,6 +4,7 @@ h1{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-variant-position: sub;
     text-align: center;
-    font-size: 3.0;
+    font-size: 1.5;
     background-color: black;
+    padding: 5px;
 }
