@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Selector</title>
+    <style>
+        h1{
+            color: red;
+        }
+        h2{
+            color: black;
+            text-shadow: 3px 3px 3px gray;
+        }
+        p{
+            text-indent: 2rem;
+            margin-left: 2rem;
+        }
+        .hot::first-letter{ /*class hot*/
+            color: blue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .cold{
+            color: green;
+            font-weight: bold;
+        }
+        #headline{ /* id */
+            font-size: 2em;
+            color: pink;
+            margin-left: 550px;
+            margin-right: 550px;
+            border:  solid medium gray;
+            border-top: thin;
+            border-bottom: thin;
+            padding: 15px;
+            background-color: green;
+            text-align: center;
+        }
+        /*Order of priority: selector < type < class < id */
+    </style>
+</head>
+<body>
+    <h1>h1  abalaxico</h1>
+    <h2>h2 abalaxico</h2>
+    <h1 class="hot">h1 class hot abalaxico</h1>
+    <h2 class="cold">h2 class cold abalaxico</h2>
+    <h1 >h1 id abalaxico</h1>
+    <h2 id="headline">h2 abalaxico</h2>
+    <p>p 123</p>
+    <p class="hot">p 456</p>
+
+
+</body>
+</html>
