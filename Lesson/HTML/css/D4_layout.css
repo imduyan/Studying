@@ -1,0 +1,56 @@
+/* style design layout cho web sites */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+}
+
+header{
+    
+    padding: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+    
+}
+
+header h3{
+    text-indent: 80px;
+}
+
+
+footer{
+    padding: 20px;
+    border-top: solid thin black;
+    text-align: center;
+    border-bottom: double medium black;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul>li{
+    margin-left: 2%;
+    margin-right: 2%;
+    display: inline;
+}
+
+li>a{
+    text-decoration: none;
+    display: inline-block;
+    width: 10%;
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.6s;
+    border-radius: 10px;
+    
+}
+li>a:hover{
+    background-color: orange;
+    
+}
