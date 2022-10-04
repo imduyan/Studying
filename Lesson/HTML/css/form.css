@@ -1,0 +1,44 @@
+label{
+    display: inline-block; /*de dinh nghia dc do rong*/
+    width: 100px;
+}
+form{
+    padding: 30px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: medium solid gainsboro;
+    box-shadow: 3px 3px 3px gray;
+    width: max-content;
+}
+input[type=text], input[type=password], input[type=email], textarea, select, input[type=date]{
+    font-size: 1.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    width: 200px;
+}
+/*input:required:invalid{
+    background-color: yellow;
+}
+input:required:valid{
+    background-color: pink;
+}*/
+
+form div{
+    margin-top: 10px;
+}
+button{
+    padding: 8px 20px ;
+    color: antiquewhite;
+    font-weight: bold;
+    border-radius: 10px;
+    
+}
+button[type=reset]{
+    background-color: lightseagreen;
+}
+button[type=submit]{
+    background-color: red;
+}
+input:required{
+    border: none;
+    border-bottom: medium solid salmon;
+    border-left: thin solid salmon;
+}

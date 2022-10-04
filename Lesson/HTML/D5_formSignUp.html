@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
+    <title>Sign-Up</title>
+    <style>
+        label{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="D5_formSignIn.html">
+            <h2>Sign up</h2>
+            <hr>
+            <div><label for="">User</label><input type="text" name="user" id="user" required value="aptech"></div>
+            <div><label for="">Password</label><input type="password" name="pass" id="pass" required placeholder="123"></div>
+            <div><label for="">Password Confirm</label><input type="password" name="passcon" id="passcon" required placeholder="123"></div>
+            <div><label for="">Email</label><input type="text" name="email" id="email" value="aptech@gmail.com"></div>
+            <div>
+                <label for="">Gender</label>
+                <input type="radio" name="gender-m" id="gender" value="male" checked>Male
+                <input type="radio" name="gender" id="gender-f" value="female" >Female
+            </div>
+            <div>
+                <label for="">Languages</label>
+                <input type="checkbox" name="lang_en" id="lang_en" value="English" checked> EN -
+                <input type="checkbox" name="lang_fr" id="lang-fr" value="Frence"> FR -
+                <input type="checkbox" name="lang_jp" id="lang_jp" value="Japanese" > JP -
+            </div>
+            <div>
+                <label for="">Location</label>
+                <select name="location" id="location" required>
+                    <option value="" selected>--- Select a city ---</option>
+                    <option value="HN">Ha Noi</option>
+                    <option value="SG" >Sai Gon</option>
+                    <option value="DN">Da Nang</option>
+                    <option value="HU">Hue</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Birthday</label>
+                <input type="date" name="dob" id="dob" value="2004-04-21">
+            </div>
+            <div>
+                <label for="" style="vertical-align: top;" >Comment</label>
+                <textarea placeholder="Binh luan" rows="3" name="note" id="note"></textarea>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

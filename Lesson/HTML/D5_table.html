@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+        h2{
+            color: blue;
+        }
+        caption{
+            font-weight: bolder;
+            color: forestgreen;
+        }
+
+        table{
+            padding: 10px;
+            border: solid thin gray;
+            box-shadow:  3px 3px 3px gainsboro;
+        }
+
+        th, td{
+            border: solid thin burlywood;
+            padding: 5px 10px 5px 10px;
+        }
+        th{
+            background-color: darkred;
+            color: antiquewhite;
+        }
+        td:nth-child(4){
+            text-align: center;
+        }
+        tr:nth-child(odd){
+            background-color: bisque;
+        }
+        
+        tr:last-child>td{
+            text-align: right;
+            color: brown;
+        }
+        tr:hover{
+            background-color: bisque;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student list table</h2>
+    <hr>
+    <table border="1">
+        <caption>This is caption</caption>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>Nguyen Duy</td>
+            <td>duynguyen@gmail.com</td>
+            <td rowspan="2" style="vertical-align: middle;">12/09/2004</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Phan Dang Luu</td>
+            <td>Luuphan@gmail.com</td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>Trinh An</td>
+            <td>andep12@gmail.com</td>
+            <td>18/09/2004</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>Lai Dang Binh</td>
+            <td>binhgold@gmail.com</td>
+            <td>09/05/2004</td>
+        </tr>
+        <tr>
+            <td colspan="4">Total of student: 4</td>
+        </tr>
+    </table>
+</body>
+</html>

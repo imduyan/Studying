@@ -1,0 +1,58 @@
+label{
+    display: inline-block; /*de dinh 6nghia dc do rong*/
+    width: 100px;
+}
+form{
+    padding: 30px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: medium solid gainsboro;
+    box-shadow: 3px 3px 3px gray;
+    width: max-content;
+    position: absolute;
+    left: 1000px;
+    top: 200px;
+}
+input[type=text], input[type=password], input[type=email], textarea, select, input[type=date]{
+    font-size: 1.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    width: 350px;
+    height: 30px;
+    background-color: rgb(213, 219, 228);
+}
+/*input:required:invalid{
+    background-color: yellow;
+}
+input:required:valid{
+    background-color: pink;
+}*/
+
+form div{
+    margin-top: 10px;
+}
+button{
+    padding: 8px 20px ;
+    color: antiquewhite;
+    font-weight: bold;
+    border-radius: 10px;
+    
+}
+button[type=reset]{
+    background-color: lightseagreen;
+}
+button[type=submit]{
+    background-color: rgb(102, 236, 72);
+    border: thin solid gray;
+    border-radius: 3px;
+    width: 350px;
+    height: 45px;
+}
+input:required{
+    border: none;
+}
+h4{
+    color: rgb(226, 168, 92);
+}
+h2{
+    text-align: center;
+    color: green;
+}
