@@ -54,16 +54,6 @@ span>a{
     display: none;
 }
 
-#section{
-    color: #f00;
-    font-size: 70px;
-    position: relative;
-    top: 150px;
-}
-#section h1{
-    color: #111;
-}
-
 footer{
     position: relative;
     width: 100%;
@@ -257,3 +247,31 @@ footer .container .noi-dung.about p{
         width: 100%;
     }
 }
+/*labguide 7*/
+
+#hone{
+    font-size: 70px;
+    margin-bottom: 40px;
+}
+
+#section-7{
+    position: relative;
+    top: 150px;
+    text-align: left;
+}
+#section-7 img{
+    width: 500px;
+}
+#bang{
+    
+}
+tr{
+    
+}
+tr>td{
+    font-size: 20px;
+    vertical-align: top;
+    padding-left: 10px;
+
+}
+

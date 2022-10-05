@@ -5,54 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LabGuide8</title>
-    <link rel="stylesheet" href="form.css">
+    <style>
+        #table-l8{
+            font-size: 30px;
+            border-collapse: collapse;
+        }
+        #table-l8 tr{
+            background-color: black;
+            
+        }
+        #table-l8 td{
+            text-align: center;
+            color: white;
+            border: none;
+            
+        }
+        span>a{
+            border: solid thin black;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        #table-l8 span:hover a{
+            color: rgb(221, 234, 41);
+        }
+
+
+    </style>
 </head>
 <body>
-    <div>
-        <form action="">
-            <h2>Sign Up</h2>
-            <h4>Your Basic info</h4>
-            <div><label for="">Name:</label><br><input type="text" name="name" id="name" required placeholder=""></div>
-            <div><label for="">Email:</label><br><input type="text" name="email" id="email" required placeholder=""></div>
-            <div><label for="">Password</label><br><input type="password" name="pass" id="pass" required placeholder=""></div>
-            <div>
-                <label for="">Age:</label><br>
-                <input type="radio" name="under18" id="under18">Under 18
-                <input type="radio" name="other18" id="other18">18 or other
-            </div> <br>
-            <h4>Your Profile</h4>
-            <div><label for="" >Biography:</label><br>
-            <textarea name="bio" id="bio" cols="" rows="4" style="height: 85px;"></textarea>
-            </div>
-            <div><label for="">Job Role:</label><br>
-            <select name="role" id="role">
-                <optgroup label="Web">
-                    <option value="">Front-End Developer</option>
-                    <option value="">PHP Developer</option>
-                    <option value="">Python Developer</option>
-                    <option value="">Rails Developer</option>
-                    <option value="">Web Designer</option>
-                    <option value="">WordPress Developer</option>
-                </optgroup>
-                <optgroup label="Mobile">
-                    <option value="">Android Developer</option>
-                    <option value="">IOS Developer</option>
-                    <option value="">Mobile Developer</option>
-                </optgroup>
-                <optgroup label="Business">
-                    <option value="">Business Owner</option>
-                    <option value="">Freelancer</option>
-                </optgroup>
-                <optgroup label="Other">
-                    <option value="">Secretary</option>
-                    <option value="">Maintenance</option>
-                </optgroup>
-            </select></div><br>
-            <div>
-                <button type="submit">Sign Up</button>
-            </div>
-
-        </form>
-    </div>
+    <header>
+        <table id="table-l8">
+            <tr>
+                <td style="width: 9vw; text-align:right">
+                    <img src="Screenshot 2022-10-04 213830.png" alt="" width="90px">
+                </td>
+                <td style="width: 45vw; text-align:left ">
+                    <h1>Stack</h1>
+                </td>
+                <td style="width: 8vw;">
+                    <p>Home</p>
+                </td>
+                <td style="width: 8vw;">
+                    <p>Page</p>
+                </td>
+                <td style="width: 8vw;">
+                    <p>Contact</p>
+                </td>
+                <td style="width: 9vw;">
+                    <span><a href="" style="background-color: rgb(244, 54, 54);">Log In</a></span>
+                </td>
+                <td style="width: 9vw;">
+                    <span><a href="L8_SignUp.html" style="background-color: black; border: solid thin white;" >Sign Up</a></span>
+                </td>
+                <td>
+                    <div style="width: 4vw;"></div>
+                </td>
+            </tr>
+        </table>
+    </header>
+    
+    <section>
+        <br>
+        <table>
+            <tr>
+                <td style="text-align: center; width: 60vw; background-color: white" ><img src="lab guide 8 images/p1.PNG" alt="" style="height: 990px  " ></td>
+                <td style="text-align: center; width: 40vw; background-color: white" ><img src="lab guide 8 images/p2.PNG" alt="" style="height: 990px; "></td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+    <footer style="text-align: center;">
+            Copyright &copy; by ABC Group
+    </footer>
 </body>
 </html>
