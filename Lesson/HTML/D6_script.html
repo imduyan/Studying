@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+    <script>
+        document.write("<h2> hello </h2>");
+        document.write("<hr>"); 
+        document.write
+        (`
+        <div id="demo">
+            <ul >
+                <li>
+                    <img src="image/photo1thumb.jpg" alt="">
+                    <span>
+                        <img src="image/photo1.jpg" alt=""><br>
+                    </span>
+                </li>
+                <li>
+                    <img src="image/photo2thumb.jpg" alt="">
+                    <span><img src="image/photo2.jpg" alt=""><br>
+                    </span>
+                </li>
+                <li>
+                    <img src="image/photo3thumb.jpg" alt="">
+                    <span><img src="image/photo3.jpg" alt=""><br>
+                    </span>
+                </li>
+                <li>
+                    <img src="image/photo4thumb.jpg" alt="">
+                    <span><img src="image/photo4.jpg" alt=""><br>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        `);
+
+    </script>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #demo{
+            position: relative;
+        }
+        #demo ul{
+            list-style-type: none;
+            width: 300px;
+        }
+        #demo span{
+            position: absolute;
+            left: 400px;
+            top: 0;
+            display: none;
+        }
+        #demo li:hover span{
+            display: block;
+        }
+        #demo li{
+            display: inline-block;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

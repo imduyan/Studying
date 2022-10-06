@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    
+</head>
+<body>
+    <h2>Alert - Confirm demo</h2>
+    <form action="">
+        <button value="click me" name="clickme" id="clickme" onclick='alert("hello")';>clink here</button>
+        <input type="button" value="hit me" name="hitme" id="hitme"> 
+        <input type="button" value="demo promt" id="pr">
+    </form>
+    <script>
+        //program event hit me:
+        document.getElementById("hitme").onclick=function(){
+            var kq = confirm("Close window?");
+            console.log(kq); //print value of kq to monitor of developer
+            if(kq==true){
+                window.close();
+            }
+            else{
+                alert("false");
+            }
+        }
+        document.getElementById("pr").onclick=function(){
+            var kq=prompt("enter your year of birth: ");
+            console.log(`Year of birth:  ${kq}`);
+            if(isNaN(kq)){
+                alert("Wrong!!, Try Again!");
+            }
+            else{
+                var age = new Date().getFullYear() - kq;
+                console.log(`Age: ${age}`);
+            }
+        }
+    </script>
+</body>
+</html>
