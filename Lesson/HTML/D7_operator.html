@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator</title>
+    <link rel="stylesheet" href="css/form.css" />
+    <style>
+      label {
+        font-weight: bold;
+        color: blue;
+        width: 160px;
+      }
+      input[type="number"] {
+        width: 100px;
+      }
+      input[type="button"] {
+        background-color: blueviolet;
+        height: 40px;
+        width: 140px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h2>Casio</h2>
+      <hr />
+      <div>
+        <label for="">input number 1 </label>
+        <input
+          type="number"
+          name="n1"
+          id="n1"
+          min="0"
+          max="200"
+          value="56"
+          autofocus
+        />
+        <br />
+        <label for="">input number 2 </label>
+        <input type="number" name="n2" id="n2" min="0" max="200" value="28" />
+      </div>
+      <br />
+      <div>
+        <input type="button" id="bit" value="Bitwise" />
+        <input
+          type="button"
+          id="ari"
+          value="Arithmetic"
+          style="background-color: red"
+        />
+      </div>
+
+      <div id="result"></div>
+      <p id="max"></p>
+    </form>
+    <script>
+      document.getElementById("bit").onclick = function () {
+        //get value of number 1 into a variable
+        var a = document.getElementById("n1").value;
+        var b = document.getElementById("n2").value;
+
+        let n1 = a & b;
+        let n2 = a | b;
+        let n3 = a ^ b;
+
+        let s = `<p>${a} and ${b} = ${n1}<br>${a} or ${b} = ${n2}<br>${a} xor ${b} = ${n3}</p>`;
+        //then insert string s into div that has id="result"
+        document.getElementById("result").innerHTML = s;
+      };
+      document.getElementById("ari").onclick = function () {
+        //get value of number 1 into a variable
+        var a = document.getElementById("n1").value;
+        var b = document.getElementById("n2").value;
+
+        let n1 = parseInt(a) + parseInt(b);
+        let n2 = a - b;
+        let n3 = a * b;
+        let n4 = a / b;
+        let n5 = a % b;
+        let max = a > b ? a : b;
+
+        let s = `<p>${a} + ${b} = ${n1}<br>${a} - ${b} = ${n2}<br>${a} * ${b} = ${n3}<br>${a} / ${b} = ${n4}<br>${a} % ${b} = ${n5}</p>`;
+
+        //then insert string s into div that has id="result"
+        document.getElementById("result").innerHTML = s;
+        document.getElementById("max").innerHTML = "max: " + max;
+      };
+    </script>
+  </body>
+</html>

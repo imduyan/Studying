@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expression</title>
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body>
+    <h2>Regular Expression Demo</h2>
+    <hr />
+    <form action="">
+      <div>
+        <label for="">Enter Name:</label>
+        <input type="text" name="name" id="name" required />
+        <input type="button" name="btName" id="btName" value="check" />
+        <p id="errName"></p>
+      </div>
+    </form>
+    <script>
+      //program name in button is valid or not
+      document.getElementById("btName").onclick = function () {
+        var data = document.getElementById("name").value.trim();
+        if (data.length < 3) {
+          alert(
+            "Name is invalid!!! Name must be more or equal three character."
+          );
+          return false;
+        }
+
+        let r = /^[a-z ]{3,}$/gi; //a to z, space, 3 or more character
+        if (r.test(data) == false) {
+          alert(
+            "Name Invalid!! must be character a - z and space, Please again!"
+          );
+        }
+      };
+    </script>
+  </body>
+</html>
