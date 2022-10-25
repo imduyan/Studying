@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="stylesheet" href="css/form.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #signOut {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Welcome<span id="span"></span> !</h2>
+    <input type="button" value="Sign-Out" id="signOut" />
+  </body>
+  <script>
+    window.onload = function () {
+      if (sessionStorage["user"] != null) {
+        document.getElementById(
+          "span"
+        ).innerHTML = ` - ${sessionStorage["user"]}`;
+        document.getElementById("signOut").style.display = "inline";
+      }
+    };
+
+    //event click on signOut button
+    document.getElementById("signOut").onclick = function () {
+      //delete password on session/local storage
+      sessionStorage.removeItem("user");
+      localStorage.removeItem("user");
+      sessionStorage.removeItem("pass");
+      localStorage.removeItem("pass");
+
+      history.back();
+      //location.href = "D10_sessionStorage.html";
+    };
+  </script>
+</html>

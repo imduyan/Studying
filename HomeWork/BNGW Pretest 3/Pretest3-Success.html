@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pretest 3</title>
+    <style>
+      form {
+        border: solid thin black;
+        width: 40vw;
+      }
+      label.first {
+        font-size: larger;
+        padding: 1vw;
+        display: inline-block;
+        width: 12vw;
+        color: green;
+      }
+      label.scd {
+        font-size: larger;
+        padding: 1vw;
+        display: inline;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h3>Student Information Successful Registration</h3>
+      <div>
+        <label class="first" for="">Name</label>
+        <label for="" id="name" class="scd"></label>
+      </div>
+      <div>
+        <label for="" class="first">Gender</label
+        ><label for="" id="sex" class="scd"></label>
+      </div>
+      <div>
+        <label for="" class="first">Address</label
+        ><label for="" id="address" class="scd"></label>
+      </div>
+      <div>
+        <label for="" class="first">Email</label
+        ><label for="" id="email" class="scd"></label>
+      </div>
+      <div>
+        <label for="" class="first">Phone</label
+        ><label for="" id="phone" class="scd"></label>
+      </div>
+      <div>
+        <label for="" class="first">Qualification</label
+        ><label for="" id="qual" class="scd"></label>
+      </div>
+      <br />
+      <a href="Pretest3.html">Click here to return to Student Page</a>
+    </form>
+    <script>
+      document.getElementById("name").innerHTML =
+        sessionStorage.getItem("name");
+      document.getElementById("sex").innerHTML = sessionStorage.getItem("sex");
+      document.getElementById("address").innerHTML =
+        sessionStorage.getItem("address");
+      document.getElementById("email").innerHTML =
+        sessionStorage.getItem("email");
+      document.getElementById("phone").innerHTML =
+        sessionStorage.getItem("phone");
+      document.getElementById("qual").innerHTML =
+        sessionStorage.getItem("country");
+    </script>
+  </body>
+</html>

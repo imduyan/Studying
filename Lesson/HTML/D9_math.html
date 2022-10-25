@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Math</title>
+    <style>
+      form {
+        font-size: 30px;
+      }
+      input {
+        height: 30px;
+        font-size: 20px;
+        width: 80px;
+        margin-left: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 220px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demo Math</h2>
+    <hr />
+    <form action="">
+      <div>
+        <label for="">Enter Number 1: </label>
+        <input type="text" name="n1" id="n1" value="5.2" />
+      </div>
+      <div>
+        <label for="">Enter Number 2: </label>
+        <input type="text" name="n2" id="n2" value="2" />
+      </div>
+      <div>
+        <button type="button" id="btclick">Click</button>
+      </div>
+      <div>
+        <label for="">Floor:</label>
+        <input type="text" name="n3" id="n3" value="" readonly />
+      </div>
+      <div>
+        <label for="">Ceiling:</label>
+        <input type="text" name="n4" id="n4" value="" readonly />
+      </div>
+      <div>
+        <label for="">Round:</label>
+        <input type="text" name="n5" id="n5" value="" readonly />
+      </div>
+      <div>
+        <label for="">Pow:</label>
+        <input type="text" name="n6" id="n6" value="" readonly />
+      </div>
+      <div>
+        <label for="">Random:</label>
+        <input type="text" name="n7" id="n7" value="" readonly />
+      </div>
+    </form>
+    <script>
+      document.getElementById("btclick").onclick = function () {
+        let n1 = parseFloat(document.getElementById("n1").value);
+        let n2 = parseFloat(document.getElementById("n2").value);
+
+        document.getElementById("n3").value = Math.floor(n1);
+        document.getElementById("n4").value = Math.ceil(n1);
+        document.getElementById("n5").value = Math.round(n1);
+        document.getElementById("n6").value = Math.pow(n1, n2);
+        document.getElementById("n7").value = Math.random(); //random 0-1
+      };
+    </script>
+  </body>
+</html>

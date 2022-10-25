@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LabGuide11</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 130px;
+        text-align: right;
+        margin-right: 10px;
+      }
+      form {
+        background-color: bisque;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h1>Enter details of your account</h1>
+      <hr />
+      <label for="">First name</label
+      ><input type="text" id="fn" required autofocus /> <br />
+      <label for="">Last name</label
+      ><input type="text" id="ln" required /><br />
+      <label for="">Email</label><input type="text" id="email" /> <br />
+      <label for="">Age</label><input type="number" id="age" value="18" />
+      <br />
+      <label for="">Are you employed</label>
+      <input type="checkbox" value="Yes" /> <input type="checkbox" value="No" />
+      <hr />
+      <button style="margin-left: 100px" type="submit" id="submit">OK</button>
+      <button type="reset">Cancel</button>
+    </form>
+    <script>
+      document.getElementById("submit").onclick = function () {
+        var fn = document.getElementById("fn").value.trim();
+        var ln = document.getElementById("ln").value.trim();
+        let rfn = /^Aptech$/;
+        let rln = /^FPT$/;
+        if (
+          document.getElementById("age").value < 18 ||
+          document.getElementById("age").value > 30
+        ) {
+          alert("Wrong Age!!! MUST BE IN [18-30]");
+        }
+        if (rfn.test(fn) == true && rln.test(ln) == true) {
+          alert("Congratulation!");
+          return true;
+        } else {
+          alert("Invalid!!");
+          return false;
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Object</title>
+  </head>
+  <body>
+    <h2></h2>
+    <hr />
+    <input type="button" value="DATE" id="btDate" />
+    <input type="button" value="MATH" id="btMath" />
+    <input type="button" value="STRING" id="btString" />
+    <script>
+      //function execuvate when click on anywhere in website
+      document.onclick = function (e) {
+        let bId = e.srcElement.id; //find by id
+        let bname = "";
+
+        switch (bId) {
+          case "btDate":
+            bname = "D9_date.html";
+            break;
+          case "btMath":
+            bname = "D9_math.html";
+            break;
+          case "btString":
+            bname = "D9_String.html";
+            break;
+          default:
+            return;
+        }
+        location.href = bname;
+      };
+    </script>
+  </body>
+</html>

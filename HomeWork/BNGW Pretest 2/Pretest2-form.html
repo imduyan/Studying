@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REGISTRATION FORM</title>
+    <style>
+      span {
+        color: red;
+      }
+      ul {
+        margin-bottom: 80px;
+      }
+      li {
+        list-style-type: decimal;
+        text-align: left;
+      }
+      form {
+        border: solid thin black;
+        width: 500px;
+        margin-left: 30vw;
+      }
+      label {
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+        
+      }
+      input, textarea {
+        width: 280px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <form action="" id="form">
+      <h1 style="text-align: center;">
+        REGISTRATION FORM
+      </h1>
+      <h1 style="text-align: left;">Notes:</h1>
+      <ul>
+        <li>Fields with ( <span>*</span>) mark must be entered</li>
+        <li>Login name have no spaces</li>
+      </ul>
+      <div>
+        <label for="">Login name<span>*</span></label>
+        <input type="text" required id="name"/>
+      </div>
+      <div>
+        <label for="">Password<span>*</span></label>
+        <input type="text" required id="pass"/>
+      </div>
+      <div>
+        <label for="">Password Confirm<span>*</span></label>
+        <input type="text" required id="passCf"/>
+      </div>
+      <div>
+        <label for="">Full name<span>*</span></label>
+        <input type="text" required id="fullName"/>
+      </div>
+      <div>
+        <label for="">Address<span>*</span></label>
+        <input type="text" required id="address"/>
+      </div>
+      <div>
+        <label for="">Email<span>*</span></label>
+        <input type="text" required id="email"/>
+      </div>
+      <div>
+        <label for="">Sex</label>
+        <input type="radio" id="sex" checked style="width: 30px" />Male<input
+          type="radio"
+          id="sex"
+          style="width: 30px"
+        />Female
+      </div>
+      <div>
+        <label for="">Date of Birth</label>
+        <input type="date" id="dob"/>
+    </div>
+      <div>
+        <label for="">Country</label>
+        <select name="" id="">
+            <option value=""></option>
+        </select>
+      <div>
+        <label for="">Phone number</label>
+        <input type="text" id="phone"/>
+        </div>
+      <div>
+        <label for="">Hobbies</label>
+        <input type="checkbox" name="" id="" style="width: 10px">Swimming
+        <input type="checkbox" name="" id="" style="width: 10px">Dancing
+        <input type="checkbox" name="" id="" style="width: 10px">Shopping
+        </div>
+      <div>
+        <label for="">Comment</label>
+        <textarea name="cmt" id="cmt" cols="" rows="10"></textarea>
+        </div>
+        <div style="text-align: center;">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+    <script>
+        document.getElementById("form").onsubmit = function(){
+            var checkNamePass = false;
+            var checkPassCf = false;
+            var checkEmail = false;
+            var checkPhone = false;
+            var checkDateOfBirth = false;
+            alert("Welcome to Education Web1");
+
+            var r = /^[a-zA-Z0-9 ]{5,}$/;
+            var r2 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ig;
+            var r3 = /^[0-9]{6,}$/ig;
+
+            alert("Welcome to Education Web2");
+
+
+            let name =document.getElementById("name").value;
+            let pass = document.getElementById("pass").value;
+            let passCf = document.getElementById("passCf").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let dob = document.getElementById("dob").value;
+            var leapYear = new Date(dob);
+            var yearOfBirth = leapYear.getFullYear();
+            alert("Welcome to Education Web3");
+
+
+            if(pass==passCf){
+              checkPassCf = true;
+            }
+            if(r.test(name) && r.test(pass)){
+              checkNamePass = true;
+            }
+            if(r2.test(email)){
+              checkEmail = true;
+            }
+            if(r3.test(phone)){
+              checkPhone=true;
+            }
+            if((yearOfBirth%4)==0){
+              checkDateOfBirth = true;
+            }
+            console.log(checkPassCf, checkDateOfBirth,checkEmail,checkNamePass,checkPhone);
+            alert("Welcome to Education Web4");
+
+            if(checkDateOfBirth && checkEmail&&checkNamePass&&checkPassCf&&checkPhone){
+              alert("Welcome to Education Web");
+              return true;
+            }
+            else{
+              alert("some information were wrong!!");
+              return false;
+            }
+            
+        }
+    </script>
+  </body>
+</html>

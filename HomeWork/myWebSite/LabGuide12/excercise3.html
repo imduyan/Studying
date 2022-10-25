@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // javascript Program to find
+      // transpose of a matrix
+
+      var N = 4;
+
+      // This function stores transpose
+      // of A in B
+      function transpose(A, B) {
+        var i, j;
+        for (i = 0; i < N; i++) for (j = 0; j < N; j++) B[i][j] = A[j][i];
+      }
+
+      // Driver code
+
+      var A = [
+        [1, 1, 1, 1],
+        [2, 2, 2, 2],
+        [3, 3, 3, 3],
+        [4, 4, 4, 4],
+      ];
+      var B = [
+        [1, 1, 1, 1],
+        [2, 2, 2, 2],
+        [3, 3, 3, 3],
+        [4, 4, 4, 4],
+      ];
+
+      //var B = Array(N);
+      //for (i = 0; i < N; i++) B[i] = Array(N).fill(0);
+
+      transpose(A, B);
+
+      document.write("Origin matrix is <br/>");
+      for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) document.write(A[i][j] + " ");
+        document.write("<br/>");
+      }
+
+      document.write("Result matrix is <br/>");
+      for (i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) document.write(B[i][j] + " ");
+        document.write("<br/>");
+      }
+      // This code contributed by Rajput-Ji
+    </script>
+  </body>
+</html>

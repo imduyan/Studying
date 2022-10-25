@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pretest 4</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #form1 {
+        border: solid thin black;
+        width: 50vw;
+        padding: 1vw;
+      }
+      #form1 label {
+        width: 5vw;
+      }
+      #form1 input {
+        width: 15vw;
+      }
+
+      #form1 div {
+        margin-top: 0.4vw;
+        margin-bottom: 0.4vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <h1><img src="image/logo.jpg" alt="bride" />Amazing Bridges</h1>
+        </div>
+      </header>
+      <nav>
+        <ul class="list-inline">
+          <li
+            class="list-inline-item"
+            onclick="window.open('Pretest4.html', '_self');"
+          >
+            HOME
+          </li>
+          <li class="list-inline-item">WORLD BRIDES</li>
+          <li class="list-inline-item">TOP LONGEST</li>
+          <li class="list-inline-item">TOP HIGHEST</li>
+          <li class="list-inline-item">CONTACT</li>
+        </ul>
+      </nav>
+      <section>
+        <h1>Contact Us</h1>
+        <form action="" id="form1">
+          <div>
+            <h3>Your Details</h3>
+          </div>
+          <br />
+          <div>
+            <label for="" style="margin-bottom: 0.5vw; margin-top: 1vw"
+              >Name</label
+            ><input type="text" name="name" id="name" required />
+            <label style="color: red; padding-left: 0vw">*</label>
+          </div>
+          <div>
+            <label for="" style="margin-bottom: 2vw">Email</label
+            ><input type="text" name="email" id="email" required />
+            <label style="color: red; padding-left: 0vw">*</label>
+          </div>
+
+          <br />
+
+          <div>
+            <h3>Your reviews</h3>
+          </div>
+          <br />
+          <div>
+            <label for="" style="margin-right: 1vw; width: 15vw"
+              >How did you hear about us?</label
+            >
+            <select name="sl" id="sl">
+              <option value="Google" selected>Google</option>
+              <option value="Friend">Friend</option>
+              <option value="Advert">Advert</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="" style="margin-right: 1vw; width: 15vw"
+              >Would you visit again?</label
+            >
+            <input type="radio" name="choose" id="choose1" style="width: 1vw" />
+            <label for="" style="margin-right: 1vw">Yes</label>
+            <input type="radio" name="choose" id="choose2" style="width: 1vw" />
+            <label for="" style="margin-right: 1vw">No</label>
+            <input type="radio" name="choose" id="choose3" style="width: 1vw" />
+            <label for="">Maybe</label>
+          </div>
+          <div>
+            <label for="" style="width: 15vw">Comment:</label><br />
+            <textarea
+              style="width: 20vw"
+              name="cmt"
+              id="cmt"
+              cols=""
+              rows=""
+            ></textarea>
+          </div>
+          <div>
+            <input type="checkbox" name="cb" id="cb" style="width: 1vw" />
+            <label for="" style="width: 15vw"
+              >Sign me up for Email updates</label
+            >
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+      <footer style="text-align: center; margin-top: 2vw">
+        Copyright &copy; by ABC Team April, 2020
+      </footer>
+    </div>
+    <script src="Pretest4.js"></script>
+  </body>
+</html>

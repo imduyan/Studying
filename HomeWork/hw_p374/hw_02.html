@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Username-Password</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="">Username:</label>
+        <input
+          type="text"
+          id="user"
+          autofocus
+          placeholder="Enter Username"
+          required
+        />
+        <br />
+        <label for="">Password:</label>
+        <input
+          type="password"
+          id="pass"
+          autofocus
+          placeholder="Enter Password"
+          required
+        />
+        <br />
+        <button type="submit" id="bton">Enter</button>
+      </div>
+    </form>
+    <script>
+      document.getElementById("bton").onclick = function () {
+        let r = /^[a-z ]{3,10}$/gi;
+        let rp = /^[a-z ]\w{3,10}$/gi;
+        var usn = document.getElementById("user").value.trim();
+        var pass = document.getElementById("pass").value.trim();
+        if (r.test(usn) == false) {
+          alert("wrong username!! Try again :))");
+          return false;
+        }
+        if (rp.test(pass) == false) {
+          alert("wrong password!! Try again :))");
+          return false;
+        }
+      };
+    </script>
+  </body>
+</html>

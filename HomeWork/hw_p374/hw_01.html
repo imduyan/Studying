@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Max-Min Number</title>
+  </head>
+  <body>
+    <form action="">
+      <h1>Enter three numbers:</h1>
+      <br />
+      <label for="">Enter number 1:</label>
+      <input type="number" id="n1" /><br />
+      <label for="">Enter number 2:</label>
+      <input type="number" id="n2" /><br />
+      <label for="">Enter number 3:</label>
+      <input type="number" id="n3" /> <br />
+      <input type="button" id="bton" value="Enter" />
+      <h2 id="result"></h2>
+    </form>
+  </body>
+  <script>
+    document.getElementById("bton").onclick = function () {
+      var a = document.getElementById("n1").value;
+      var b = document.getElementById("n2").value;
+      var c = document.getElementById("n3").value;
+
+      let max12 = a > b ? a : b;
+      let max = max12 > c ? max12 : c;
+      let min12 = a < b ? a : b;
+      let min = min12 < c ? min12 : c;
+
+      document.getElementById("result").innerHTML =
+        "Max: " + max + "<br>Min: " + min;
+    };
+  </script>
+</html>

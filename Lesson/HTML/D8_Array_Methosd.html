@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Method demo</title>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Methods dome</h2>
+    <hr />
+    <div>
+      <label for="">Enter student name</label>
+      <input type="text" name="ten" id="tensv" value="khanh" />
+    </div>
+    <div>
+      <input type="button" value="Add" id="btadd" />
+      <input type="button" value="Delete" id="btdel" />
+      <input type="button" value="Sort" id="btsort" />
+    </div>
+    <hr />
+    <div>
+      <p id="dssv"></p>
+      <p id="dssv2"></p>
+    </div>
+    <script>
+      let list = ["duy", "kha", "tai", "trung", "suong"];
+
+      document.getElementById("dssv").innerHTML = list.join(", ");
+
+      document.getElementById("btadd").onclick = function () {
+        //add data in student name input into list[]
+
+        let name = document.getElementById("tensv").value;
+
+        list.push(name);
+
+        document.getElementById("dssv").innerHTML = list.join(", ");
+      };
+
+      document.getElementById("btdel").onclick = function () {
+        let name = document.getElementById("tensv").value;
+        let i = list.indexOf(name);
+        if (i == -1) {
+          alert("Not found");
+        } else {
+          list.splice(i, 1);
+        }
+        document.getElementById("dssv").innerHTML = list.join(", ");
+      };
+
+      document.getElementById("btsort").onclick = function () {
+        list.sort();
+        document.getElementById("dssv2").innerHTML = list.join(", ");
+
+        /*
+        for (const i in list) {
+          document.write(`${list[i]} <br> `);
+        }
+        
+        list.forEach((Element) => {
+          document.write(Element + "<br>");
+        });
+        */
+      };
+    </script>
+  </body>
+</html>

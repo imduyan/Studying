@@ -14,8 +14,8 @@
   </head>
   <body>
     <div>
-      <form action="D5_formSignIn.html">
-        <h2>Sign up</h2>
+      <form action="D8_formSignUpUpgradeFunc.html" onsubmit="return fn_login()">
+        <h2>Sign up - Function Demo</h2>
         <hr />
         <div>
           <label for="">User</label
@@ -54,31 +54,39 @@
           <label for="">Gender</label>
           <input
             type="radio"
-            name="gender-m"
+            name="gender"
             id="gender"
             value="male"
             checked
           />Male
-          <input
-            type="radio"
-            name="gender"
-            id="gender-f"
-            value="female"
-          />Female
+          <input type="radio" name="gender" id="gender" value="female" />Female
         </div>
         <div>
           <label for="">Languages</label>
           <input
             type="checkbox"
-            name="lang_en"
+            name="lang[]"
             id="lang_en"
             value="English"
             checked
+            class="lang"
           />
           EN -
-          <input type="checkbox" name="lang_fr" id="lang-fr" value="Frence" />
+          <input
+            type="checkbox"
+            name="lang[]"
+            id="lang-fr"
+            value="Frence"
+            class="lang"
+          />
           FR -
-          <input type="checkbox" name="lang_jp" id="lang_jp" value="Japanese" />
+          <input
+            type="checkbox"
+            name="lang[]"
+            id="lang_jp"
+            value="Japanese"
+            class="lang"
+          />
           JP -
         </div>
         <div>
@@ -111,5 +119,64 @@
         </div>
       </form>
     </div>
+    <script>
+      function fn_login() {
+        let list = [];
+
+        // get data from form
+        let username = document.getElementById("user").value;
+        list.push(`Username: ${username}`);
+
+        let pass = document.getElementById("pass").value;
+        list.push(`Password: ${pass}`);
+
+        let pass_confirm = document.getElementById("passcon").value;
+
+        let email = document.getElementById("email").value;
+        list.push(`Email: ${email}`);
+
+        let gender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        list.push(`Gender: ${gender}`);
+
+        let n = document.getElementsByName("lang[]");
+        let listlang = [];
+
+        for (const i in n) {
+          if (n[i].checked) {
+            listlang.push(n[i].value);
+          }
+        }
+
+        list.push(`Language: ${listlang.join()}`);
+
+        /*
+        list.push(`Lang:`);
+
+        if (document.querySelector('input[id="lang_en"]:checked')) {
+          let lang = document.querySelector(
+            'input[name="lang_en"]:checked'
+          ).value;
+          list.push(`   + ${lang} `);
+        }
+        if (document.querySelector('input[id="lang_fr"]:checked')) {
+          let lang = document.querySelector(
+            'input[name="lang_fr"]:checked'
+          ).value;
+          list.push(`   + ${lang} `);
+        }
+        if (document.querySelector('input[id="lang_jp"]:checked')) {
+          let lang = document.querySelector(
+            'input[name="lang_jp"]:checked'
+          ).value;
+          list.push(`   + ${lang}`);
+        }*/
+
+        alert(list.join("\n"));
+
+        return false;
+      }
+    </script>
   </body>
 </html>

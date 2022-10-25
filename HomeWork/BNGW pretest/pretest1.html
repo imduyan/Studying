@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pretest 1</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      header {
+        background-color: green;
+        color: white;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        width: 100vw;
+        height: 4vw;
+        font-size: 20px;
+        margin-bottom: 1.5vw;
+      }
+      nav > table {
+        margin-left: 5vw;
+        width: 90vw;
+        border: solid medium black;
+        height: 3vw;
+        margin-bottom: 1vw;
+      }
+      section {
+      }
+      section > img {
+        
+        width: 65vw;
+      }
+      form>div>h2{
+        text-align: center;
+        background-color: green;
+        color: white;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 3.8vw;
+        width: 60vw;
+        font-size: 3vw;
+        
+      }
+      section > form {
+        display: none;
+        border: solid thin black;
+        width: 60vw;
+        margin-left: 20vw;
+        text-align: left;
+      }
+      label {
+        
+        display: inline-block;
+        width: 25vw;
+        text-align: left;
+        margin-left: 0.5vw;
+        font-size: 1.5vw;
+        margin-top: 0.2vw;
+        margin-bottom: 0.2vw;
+      }
+      input {
+        
+        text-align: left;
+        font-size: 1vw;
+      }
+      input[type="text"] {
+        width: 30vw;
+      }
+      input:required{
+        border: red solid thin;
+      }
+      textarea{
+        width: 30vw;
+        height: 5vw;
+      }
+      button[type="submit"], button[type="reset"]{
+        border: solid thin black;
+        border-radius: 0.8vw;
+        font-size: 1vw;
+        padding: 0.5vw;
+        margin: 0.5vw;
+      }
+      td {
+        color: blue;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold;
+      }
+      label {
+        width: 400px;
+      }
+    </style>
+    <script>
+      function check(){
+        
+        let checkAge = false;
+        let dob = document.getElementById("age").value;
+        let age = new Date(dob);
+
+        if(age.getFullYear()<=2005){
+          checkAge = true;
+        } 
+        
+        let checkEmail = false;
+        let email = document.getElementById("email").value;
+        let rEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(rEmail.test(email)){
+          checkEmail = true;
+        }
+
+        let checkPhone = false;
+        let phone = document.getElementById("phone").value;
+        let rPhone = /^\d{7,11}/;
+
+        if(rPhone.test(phone)){
+          checkPhone = true;
+        } 
+        
+
+        let list = ["Member Information", "-------------------"]
+        console.log(list);
+        let name = document.getElementById("name").value;
+
+        let address = document.getElementById("address").value;
+
+        let gender = document.querySelector(
+          'input[name="gender"]:checked'
+          ).value;
+
+        let select = document.getElementById("city");
+        var city = select.options[select.selectedIndex].value;
+        console.log(city);
+
+
+        let cmt = document.getElementById("cmt").value;
+
+        let hobby = document.getElementsByName("hb");
+        let listHobbies = [];
+        for(const i in hobby){
+          if(hobby[i].checked){
+            listHobbies.push(hobby[i].value);
+          }
+          console.log(hobby[i].value)
+        }
+        
+          
+        list.push(`Name: ${name}`);
+        list.push(`Gender: ${gender}`);
+        list.push(`Hobbies: ${listHobbies.join(",")}`);
+        list.push(`Birthday: ${dob}`);
+        list.push(`Address: ${address}`);
+        list.push(`Email: ${email}`);
+        list.push(`Phone: ${phone}`);
+        list.push(`City: ${city}`);
+        list.push(`Comment: ${cmt}`);
+        console.log(list);
+
+        if(checkAge && checkEmail && checkPhone){
+          alert(list.join("\n"));
+          alert("congratulations")
+          return true;
+        } else{
+          alert("enter again")
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header><h1>Online Shopee</h1></header>
+    <nav>
+      <table>
+        <tr>
+          <td onclick="location.reload(true)">HOME</td>
+          <td>PRODUCTS</td>
+          <td>SHOP</td>
+          <td onclick="window.open('Sign-Up.html', '_self')">REGISTER</td>
+          <td>SIGNIN</td>
+        </tr>
+      </table>
+    </nav>
+    <section>
+      <img src="images/home.JPG" alt="" />
+
+      <form action="" onsubmit="return check()">
+        <div><h2>Member Information</h2></div>
+        <div>
+          <label for="">Full name</label
+          ><input type="text" name="name" id="name" required />
+        </div>
+        <div>
+          <label for="">Gender</label>
+          <input
+            type="radio"
+            name="gender"
+            id="gender"
+            value="male"
+            checked
+          />Male
+          <input type="radio" name="gender" id="gender" value="female" />Female
+        </div>
+        <div>
+          <label for="">Hobbies</label>
+          <input type="checkbox" name="hb" checked value="Shopping"/>Shopping
+          <input type="checkbox" name="hb" value="Eating Out"/>
+          Eating Out 
+          <input type="checkbox" name="hb" value="Sporting"/>Sporting
+        </div>
+        <div>
+          <label for="">Date of Birth</label>
+          <input type="date" id="age"/>
+        </div>
+        <div>
+          <label for="">Address</label><input type="text" id="address" required/></div>
+        <div>
+          <label for="">Email</label><input type="text" id="email" required/></div>
+        <div>
+          <label for="">Phone Number</label><input type="text" id="phone" required/></div>
+        <div>
+          <label for="">City</label>
+          <select name="city" id="city">
+            <option value="None" selected name="otp">--Select--</option>
+            <option value="Saigon" name="otp">Saigon</option>
+            <option value="Hue" name="otp">Hue</option>
+            <option value="Hanoi" name="otp">Hanoi</option>
+            <option value="Danang" name="otp">Danang</option>
+          </select>
+        <div>
+          <label for="">Comment</label>
+          <textarea name="cmt" id="cmt" cols="" rows=""></textarea>
+        </div>
+        <div style="text-align: center;">
+          <button type="submit" >Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+    <footer>Shopee &copy; Copyright 2017. All rights reserved</footer>
+  </body>
+</html>

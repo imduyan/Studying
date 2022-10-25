@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sir</title>
+  </head>
+  <body>
+    <form action="">
+      <input
+        type="text"
+        id="name"
+        required
+        placeholder="Enter your name, sir!"
+      />
+      <button id="bton">Enter</button>
+    </form>
+    <script>
+      document.getElementById("bton").onclick = function () {
+        var naem = document.getElementById("name").value.trim();
+        const d = new Date();
+        let hour = d.getHours();
+        if (hour > 0 && hour < 12) {
+          alert("Good morning, " + naem);
+        } else if (hour < 18) {
+          alert("Good afternoon, " + naem);
+        } else {
+          alert("Good evening, " + naem);
+        }
+      };
+    </script>
+  </body>
+</html>

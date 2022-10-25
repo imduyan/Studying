@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 110px;
+      }
+      input {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Object</h2>
+    <hr />
+    <form action="">
+      <label for="">Enter Width:</label>
+      <input type="number" required id="width" name="width" value="10" /> <br />
+      <label for="">Enter Height:</label>
+      <input
+        type="number"
+        required
+        id="height"
+        name="height"
+        value="20"
+      /><br />
+      <input type="button" value="Perimeter-Area" id="pa" />
+      <br />
+      <p id="result"></p>
+    </form>
+
+    <script>
+      document.getElementById("pa").onclick = function () {
+        let r = parseInt(document.getElementById("width").value);
+        let c = parseInt(document.getElementById("height").value);
+
+        //creat object rectangle:
+        let rect = new Rectangle(r, c);
+
+        let s = ``;
+        s += `Area = ${rect.area()} <br>`;
+        s += `Perimeter = ${rect.perimeter()}`;
+
+        document.getElementById("result").innerHTML = s;
+      };
+
+      //create a rectangle object
+      function Rectangle(w, h) {
+        //declare 2 attribute
+        this.width = w;
+        this.height = h;
+
+        //declare area and cv
+        this.area = function () {
+          return this.width * this.height;
+        };
+        this.perimeter = function () {
+          return (this.width + this.height) * 2;
+        };
+      }
+    </script>
+  </body>
+</html>

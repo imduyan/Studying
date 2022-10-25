@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathematic Competition Mark</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="number" id="mark" placeholder="Enter student's mark here" />
+      <button type="submit" id="bton">Check</button>
+    </form>
+    <script>
+      document.getElementById("bton").onclick = function () {
+        let mark = document.getElementById("mark").value;
+        if (mark >= 0 && mark <= 100) {
+          if (mark > 75) {
+            alert("Grade A !!");
+          } else if (mark > 60) {
+            alert("Grade B !!");
+          } else if (mark > 45) {
+            alert("Grade C !!");
+          } else {
+            alert("Grade D !!");
+          }
+          return true;
+        } else {
+          return false;
+        }
+      };
+    </script>
+  </body>
+</html>

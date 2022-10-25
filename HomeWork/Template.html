@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST</title>
+    <style>
+        h1{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(72, 72, 252);
+            margin-bottom: 5vw;
+        }
+      span {
+        color: red;
+      } /* SPAN IS * IN RED */
+      
+      form {
+        border: solid thin black;
+        width: 30vw;
+        margin-left: 35vw;
+        margin-top: 5vw;
+      }
+      div{
+        margin-top: 0.5vw;
+        margin-bottom: 0.5vw;
+      }
+      label {
+        display: inline-block;
+        width: 10vw;
+        text-align: right;
+      }
+      input {
+        width: 18vw;
+      }
+      input[type="radio"]{
+        width:3vw;
+      }
+      select{
+        width: 8vw;
+        text-align: center;
+      }
+      textarea{
+        width: 18vw;
+        height: 3vw;
+      }
+      button[type="reset"] {
+        background-color: lightseagreen;
+        font-size: 1vw;
+        height: 3vw;
+        width: 6vw;
+        border-radius: 0.5vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+      }
+      button[type="submit"] {
+        background-color: red;
+        font-size: 1vw;
+        height: 3vw;
+        width: 6vw;
+        border-radius: 0.5vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+      }
+      button:hover{
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form">
+        <!-- click =>open:    onclick="window.open('Sign-Up.html', '_self')"      -->
+      <h1 style="text-align: center;">
+        something
+      </h1>
+      <div>
+        <label for="">Login name<span>*</span></label>
+        <input type="text" required id="name"/>
+      </div>
+      <div>
+        <label for="">Password<span>*</span></label>
+        <input type="text" required id="pass"/>
+      </div>
+      <div>
+        <label for="">Password Confirm<span>*</span></label>
+        <input type="text" required id="passCf"/>
+      </div>
+      <div>
+        <label for="">Full name<span>*</span></label>
+        <input type="text" required id="fullName"/>
+      </div>
+      <div>
+        <label for="">Address<span>*</span></label>
+        <input type="text" required id="address"/>
+      </div>
+      <div>
+        <label for="">Email<span>*</span></label>
+        <input type="text" required id="email"/>
+      </div>
+      <div>
+        <label for="">Sex<span style="color: white;">~</span></label>
+        <input
+            type="radio"
+            name="sex"
+            id="sex"
+            value="male"
+            checked
+          />Male
+          <input 
+            type="radio" 
+            name="sex" 
+            id="sex" 
+            value="female" 
+          />Female
+      </div>
+      <div>
+        <label for="">Date of Birth<span style="color: white;">~</span></label>
+        <input type="date" id="dob"/>
+    </div>
+      <div>
+        <label for="">Country<span style="color: white;">~</span></label>
+        <select name="country" id="country">
+            <option value="none" selected name="otp">------ Select ------</option>
+            <option value="Vietnam" name="otp">Vietnam</option>
+        </select>
+      <div>
+        <label for="">Phone number<span style="color: white;">~</span></label>
+        <input type="text" id="phone"/>
+        </div>
+      <div>
+        <label for="" >Hobbies<span style="color: white;">~</span></label>
+        <input type="checkbox" name="" id="" style="width: 10px">Swimming
+        <input type="checkbox" name="" id="" style="width: 10px">Dancing
+        <input type="checkbox" name="" id="" style="width: 10px">Shopping
+        </div>
+      <div style="vertical-align: top;">
+        <label for="" >Comment<span style="color: white;">~</span></label>
+        <textarea name="cmt" id="cmt" cols="" rows=""></textarea>
+        </div>
+        <div style="text-align: center;">
+            <button type="submit" class="bt">Submit</button>
+            <button type="reset" class="bt">Reset</button>
+        </div>
+    </form>
+    <script>
+        document.getElementById("form").onsubmit = function(){
+            /**
+            * function when click submit button
+            */
+
+//          1.declare some boolean check true-false
+            var checkNamePass = false;
+            var checkPassCf = false;
+            var checkEmail = false;
+            var checkPhone = false;
+            var checkDateOfBirth = false;
+
+            alert("pass 1");
+
+
+
+//          2.declare direct checking variable
+            var r = /^[a-zA-Z0-9 ]{5,}$/;
+            var r2 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ig;
+            var r3 = /^[0-9]{6,}$/ig;
+
+            alert("pass 2");
+
+
+
+//          3.get information from input          
+            let name =document.getElementById("name").value;
+            let pass = document.getElementById("pass").value;
+            let passCf = document.getElementById("passCf").value;
+            let fullName = document.getElementById("fullName").value;
+            let address = document.getElementById("address").value;
+            let email = document.getElementById("email").value;
+            
+            let phone = document.getElementById("phone").value;
+
+            let sex = document.querySelector('input[name="sex"]:checked').value;
+
+            let dob = document.getElementById("dob").value;
+            var leapYear = new Date(dob);
+            var yearOfBirth = leapYear.getFullYear();
+
+            let select = document.getElementById("country");
+            var country = select.options[select.selectedIndex].value;
+            console.log(country);
+
+            let hobby = document.getElementsByName("hb");
+            let listHobbies = [];
+            for(const i in hobby){
+            if(hobby[i].checked){
+                listHobbies.push(hobby[i].value);
+            }
+            console.log(hobby[i].value)
+            }
+
+            let cmt = document.getElementById("cmt").value;
+
+            alert("pass 3");
+
+
+
+//          4.check bool variables is true or false           
+            if(pass==passCf){
+              checkPassCf = true;
+            }
+            if(r.test(name) && r.test(pass)){
+              checkNamePass = true;
+            }
+            if(r2.test(email)){
+              checkEmail = true;
+            }
+            if(r3.test(phone)){
+              checkPhone=true;
+            }
+            if((yearOfBirth%4)==0){
+              checkDateOfBirth = true;
+            }
+
+            console.log(checkPassCf, checkDateOfBirth,checkEmail,checkNamePass,checkPhone);
+            alert("pass 4");
+
+            
+            
+//          5.statistic information
+            let list = ["Member Information", "-------------------"];
+            /*
+            list.push(`Name: ${name}`);
+            list.push(`Gender: ${gender}`);
+            list.push(`Hobbies: ${listHobbies.join(",")}`);
+            list.push(`Birthday: ${dob}`);
+            list.push(`Address: ${address}`);
+            list.push(`Email: ${email}`);
+            list.push(`Phone: ${phone}`);
+            list.push(`City: ${city}`);
+            list.push(`Comment: ${cmt}`);
+            list.join("\n");
+            */
+            console.log(list);
+
+            alert("pass 5");
+
+
+                    
+//          6.check if all bool variable is true - else return false
+            if(checkDateOfBirth && checkEmail&&checkNamePass&&checkPassCf&&checkPhone){
+              alert("Welcome to Education Web");
+              return true;
+            }
+            else{
+              alert("some information were wrong!!");
+              return false;
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <h2>Javascript - string demo</h2>
+    <hr />
+    <form action="">
+      <div>
+        <label for="">Enter string 1</label>
+        <input type="text" name="s1" id="s1" value="FPT Aptech HCM" /> <br />
+        <label for="">Enter string 2</label>
+        <input type="text" name="s2" id="s2" value="fpt" />
+      </div>
+      <div>
+        <label for="">Choose File</label>
+        <input type="file" name="file" id="file" />
+      </div>
+      <div>
+        <button type="button" name="btclick" id="btclick" onclick="string()">
+          Click
+        </button>
+      </div>
+      <div>
+        <p id="result1"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+      </div>
+    </form>
+    <script>
+      function string() {
+        let s1 = document.getElementById("s1").value;
+        document.getElementById("result1").innerHTML = s1.toUpperCase();
+
+        let s2 = document.getElementById("s2").value;
+        document.getElementById("result2").innerHTML = s2.toLowerCase();
+
+        if (s1.indexOf(s2) >= 0) {
+          document.getElementById("result3").innerHTML = `${s2} is in ${s1}`;
+        } else {
+          document.getElementById("result3").innerHTML = `${s2} isn't in ${s1}`;
+        }
+
+        //get name of choosen file
+        let sf = new String();
+        sf = document.getElementById("file").value;
+
+        let position = sf.lastIndexOf("\\"); //find position of last "\"
+        let sname = sf.substring(position + 1); //cut name after last "\"
+
+        document.getElementById("result4").innerHTML = `Filename: ${sname}`;
+      }
+    </script>
+  </body>
+</html>

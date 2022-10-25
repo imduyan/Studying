@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>circle - rectangle</title>
+    <style>
+      canvas {
+        border: red double medium;
+        background-color: seashell;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Canvas Demo</h2>
+    <canvas id="cv" width="300" height="150"></canvas>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("cv");
+        var context = canvas.getContext("2d");
+
+        var x = canvas.width / 2;
+        var y = canvas.height / 2;
+
+        //console.log(x, y);
+
+        context.beginPath();
+        context.arc(x, y, 30, 0, Math.PI * 2, false);
+        context.fillstyle = "orange";
+        context.globalAlpha = 0.5;
+        context.fill();
+
+        context.beginPath();
+        context.rect(x - 100, y - 50, 100, 50);
+        context.fillstyle = "darkgreen";
+        context.globalAlpha = 0.5;
+        context.fill();
+      };
+    </script>
+  </body>
+</html>

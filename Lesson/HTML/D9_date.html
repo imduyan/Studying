@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 140px;
+      }
+      textarea {
+        width: 300px;
+        height: 100px;
+      }
+      input[type="button"] {
+        background-color: red;
+        margin: 20px;
+        margin-left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demo Date</h2>
+    <hr />
+    <form action="">
+      <div>
+        <label for="">Choose date of birth</label>
+        <input type="date" name="ns" id="ns" value="2004-09-18" />
+      </div>
+      <div>
+        <input type="button" value="Choose" id="btclick" onclick="choose()" />
+      </div>
+      <div>
+        <textarea name="result" id="rs" cols="" rows="6" readonly></textarea>
+      </div>
+    </form>
+    <script>
+      //program for click event of button choose
+      function choose() {
+        let s = [];
+        let sNs = document.getElementById("ns").value;
+        s.push(`Date of Birth: ${sNs}`);
+
+        let ns = new Date(sNs); //Date(year-month-day)
+
+        let yearOfBirth = ns.getFullYear();
+        s.push(`Year of Birth: ${yearOfBirth}`);
+
+        let monthOfBirth = ns.getMonth() + 1; //basic month: 0-11
+        s.push(`Month of Birth: ${monthOfBirth}`);
+
+        let dayOfBirth = ns.getDate();
+        s.push(`Day of Birth: ${dayOfBirth}`);
+
+        //create an object present current day
+        let today = new Date();
+        let age = today.getFullYear() - yearOfBirth;
+        s.push(`Age: ${age}`);
+
+        document.getElementById("rs").value = s.join("\n");
+      }
+    </script>
+  </body>
+</html>

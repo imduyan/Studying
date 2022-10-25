@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Storage</title>
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body>
+    <h2>Session Storage</h2>
+    <hr />
+
+    <!-- Design a login form -->
+    <form action="D10_sessionStorageWelcome.html" id="form">
+      <div>
+        <label for="">Username</label>
+        <input
+          type="text"
+          name="user"
+          id="user"
+          required
+          value="Aptech"
+          autofocus
+        />
+      </div>
+      <div>
+        <label for="">Password</label>
+        <input type="text" name="pass" id="pass" required value="123" />
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+    <script>
+      //program in event submit of form login
+      document.getElementById("form").onsubmit = function (e) {
+        //get data in username input
+        let user = document.getElementById("user").value;
+
+        //get data in password input
+        let pass = document.getElementById("pass").value;
+
+        //check user, pass
+        if (user != "Aptech" || pass != "123") {
+          alert("Invalid account. Wrong username or password");
+          document.getElementById("user").focus(); //focus to user name if incorrect
+          return false; //return false: cant change page
+        }
+
+        //check ok: save data of user
+        sessionStorage.setItem("user", user);
+        sessionStorage["pass"] = pass;
+
+        localStorage.setItem("user", user);
+        localStorage["pass"] = pass;
+      };
+    </script>
+  </body>
+</html>
