@@ -1,4 +1,5 @@
 # Studying
+This Repository Storing study practice & homework code in html, css and javascript.
 
 https://imduyan.github.io/Studying/Lesson/HTML/D2_format.html
 
